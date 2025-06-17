@@ -1,0 +1,121 @@
+<!-- docs/progress.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Progress</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .commit-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .commit-item a {
+            display: block;
+            position: relative;
+        }
+        .commit-item a:hover::after {
+            content: 'View Code';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            pointer-events: none;
+        }
+        .todo-collapsed {
+            width: 2rem;
+            height: 2rem;
+            overflow: hidden;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+        #todo-icon {
+            display: none;
+        }
+        .todo-collapsed #todo-icon {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <a href="index.html" class="absolute top-4 left-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-700">View Site</a>
+    <div class="max-w-2xl w-full p-6 bg-gray-800 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-center">Project Progress</h1>
+        <ul id="log-list" class="space-y-4">
+            <!-- Commit logs will be inserted here -->
+        </ul>
+    </div>
+
+    <div id="todo-list" class="absolute top-4 right-4 max-w-xs w-full p-4 bg-gray-500 rounded-lg shadow-lg">
+        <div id="todo-content">
+            <div class="flex justify-between items-center mb-2">
+                <h2 class="text-xl font-bold">To-Do List</h2>
+                <button onclick="toggleTodoList()" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <ul class="space-y-2">
+                <li class="bg-gray-700 p-2 rounded-lg shadow-md">Homepage Mobile ✅</li>
+                <li class="bg-gray-700 p-2 rounded-lg shadow-md">Homepage Desktop (in progress)</li>
+                <li class="bg-gray-700 p-2 rounded-lg shadow-md">Interior pages</li>
+                <li class="bg-gray-700 p-2 rounded-lg shadow-md">Business directory</li>
+                <li class="bg-gray-700 p-2 rounded-lg shadow-md">CMS installation</li>
+            </ul>
+        </div>
+        <div id="todo-icon" class="hidden">
+            <img src="/svgs/docs.svg" alt="Docs Icon" class="w-6 h-6 cursor-pointer" onclick="toggleTodoList()">
+        </div>
+    </div>
+
+    <script>
+        fetch(`https://api.github.com/repos/Younger-Associates/city-of-mckenzie/commits`)
+            .then(response => response.json())
+            .then(commits => {
+                const logList = document.getElementById('log-list');
+                commits.forEach(commit => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'commit-item bg-gray-700 rounded-lg shadow-md hover:bg-gray-600 hover:shadow-lg transition duration-200';
+                    listItem.innerHTML = `
+                        <a href="https://github.com/Younger-Associates/city-of-mckenzie/commit/${commit.sha}" target="_blank" class="block relative p-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-mono text-sm text-gray-400">${commit.sha.substring(0, 7)}</span>
+                                <span class="text-sm text-gray-500">${new Date(commit.commit.author.date).toLocaleDateString()}</span>
+                            </div>
+                            <p class="mt-2 text-lg">${commit.commit.message}</p>
+                            <div class="absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                View Code
+                            </div>
+                        </a>
+                    `;
+                    logList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching commits:', error));
+
+        function toggleTodoList() {
+            const todoList = document.getElementById('todo-list');
+            const todoContent = document.getElementById('todo-content');
+            const todoIcon = document.getElementById('todo-icon');
+            if (todoContent.style.display === 'none') {
+                todoContent.style.display = 'block';
+                todoIcon.style.display = 'none';
+                todoList.classList.add('w-full');
+            } else {
+                todoContent.style.display = 'none';
+                todoIcon.style.display = 'block';
+                todoList.classList.remove('w-full');
+            }
+        }
+    </script>
+</body>
+</html>
