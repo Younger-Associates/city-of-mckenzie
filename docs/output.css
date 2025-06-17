@@ -826,10 +826,6 @@ video {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -1201,16 +1197,8 @@ video {
     grid-column: span 3 / span 3;
   }
 
-  .md\:mr-8 {
-    margin-right: 2rem;
-  }
-
   .md\:inline {
     display: inline;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 
   .md\:h-\[500px\] {
