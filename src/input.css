@@ -1,3 +1,117 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Styles moved from index.html */
+.desktop-dropdown-parent {
+  position: relative;
+}
+
+.desktop-dropdown-parent::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+
+.desktop-dropdown-menu {
+  display: none;
+}
+
+.desktop-dropdown-parent:hover .desktop-dropdown-menu {
+  display: block;
+}
+
+.blue-filter-hover:hover {
+  filter: brightness(0) saturate(100%) invert(85%) sepia(35%) saturate(506%) hue-rotate(178deg) brightness(102%) contrast(96%);
+}
+
+.group:hover .blue-filter-hover {
+  filter: brightness(0) saturate(100%) invert(85%) sepia(35%) saturate(506%) hue-rotate(178deg) brightness(102%) contrast(96%);
+}
+
+#interior-body h1 {
+  color: theme('colors.mckenzie.red');
+  font-size: 2rem; /* 36px */
+  font-weight: bold;
+}
+
+#interior-body h1, #interior-body h2, #interior-body h3, #interior-body h4 {
+  margin: 0 0 10px;
+}
+
+#interior-body a {
+  color: theme('colors.mckenzie.red');
+  text-decoration: underline;
+}
+
+#interior-body {
+  color: theme('colors.mckenzie.dark-blue');
+}
+
+#interior-body p {
+  margin: 0 0 10px;
+}
+
+#interior-body h2 {
+  color: theme('colors.mckenzie.dark-blue');
+  font-size: 1.75rem; /* 30px */
+  font-weight: bold;
+}
+
+#interior-body h3 {
+  color: theme('colors.mckenzie.green');
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+#interior-body h4 {
+  font-size: 1.2rem; /* 20px */
+  font-weight: bold;
+}
+
+#interior-body ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+#interior-body ul li::marker {
+  color: theme('colors.mckenzie.red');
+}
+
+#interior-body hr {
+  margin: 15px 0;
+}
+
+#interior-body ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+#interior-body ol li::marker {
+  color: theme('colors.mckenzie.red');
+}
+
+#interior-body ul, #interior-body ol {
+  margin-left: 1rem;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  #interior-body h1, #interior-body h2, #interior-body h3, #interior-body h4 {
+    margin: 0 0 15px;
+  }
+  #interior-body p {
+    margin: 0 0 15px;
+  }
+  #interior-body hr {
+    margin: 25px 0;
+  }
+  #interior-body ul, #interior-body ol {
+    margin-bottom: 15px;
+  }
+}
+

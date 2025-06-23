@@ -6,174 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City of McKenzie</title>
   <link href="./output.css" rel="stylesheet" />
-  <style>
-    .desktop-dropdown-parent {
-      position: relative;
-    }
-    
-    .desktop-dropdown-parent::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 20px;
-      background: transparent;
-    }
-    
-    .desktop-dropdown-menu {
-      display: none;
-    }
-    
-    .desktop-dropdown-parent:hover .desktop-dropdown-menu {
-      display: block;
-    }
-  </style>
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
 </head>
 
 <body class="font-sans">
-  <nav id="main-nav" class="bg-mckenzie-blue w-full flex flex-col lg:flex-row items-center px-4 py-2 lg:py-4 lg:px-6 z-40 relative transition-all duration-300 ease-in-out overflow-visible text-white">
-    <div class="w-full flex items-center justify-between lg:w-auto">
-      <!-- Left: Logo -->
-      <div class="flex items-center space-x-3">
-        <img src="svgs/City%20of%20McKenzie%20Logo%20-%20DBG.svg" alt="City of McKenzie Logo" class="h-12 w-auto" />
-      </div>
-      <!-- Hamburger/Close Menu Button (mobile only) -->
-      <button id="menu-toggle" class="ml-4 focus:outline-none z-50 lg:hidden">
-        <img id="menu-icon" src="svgs/Menu.svg" alt="Menu" class="h-7 w-7" />
-      </button>
-    </div>
-    <!-- Desktop Nav (hidden on mobile) -->
-    <ul class="hidden lg:flex items-center space-x-8 flex-1 justify-end">
-      <!-- Government Dropdown -->
-      <li class="relative group desktop-dropdown-parent">
-        <button class="flex items-center space-x-1 font-semibold focus:outline-none desktop-dropdown-toggle px-4 py-2 transition bg-transparent hover:bg-mckenzie-dark-blue rounded-md duration-150" aria-haspopup="true" aria-expanded="false">
-          Government
-        </button>
-        <ul class="absolute left-0 mt-2 w-64 bg-white text-mckenzie-blue rounded shadow-lg desktop-dropdown-menu z-[100] text-center">
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">City Council & Mayor</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">City Departments</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Municipal Code</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Boards & Commissions</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Meetings, Agendas & Minutes</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Transparency & Public Records</a></li>
-        </ul>
-      </li>
-      <!-- Residents Dropdown -->
-      <li class="relative group desktop-dropdown-parent">
-        <button class="flex items-center space-x-1 font-semibold focus:outline-none desktop-dropdown-toggle px-4 py-2 transition bg-transparent hover:bg-mckenzie-dark-blue rounded-md duration-150" aria-haspopup="true" aria-expanded="false">
-          Residents
-        </button>
-        <ul class="absolute left-0 mt-2 w-48 bg-white text-mckenzie-blue rounded shadow-lg desktop-dropdown-menu z-[100] text-center">
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Link 1</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Link 2</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Link 3</a></li>
-        </ul>
-      </li>
-      <!-- Business Dropdown -->
-      <li class="relative group desktop-dropdown-parent">
-        <button class="flex items-center space-x-1 font-semibold focus:outline-none desktop-dropdown-toggle px-4 py-2 transition bg-transparent hover:bg-mckenzie-dark-blue rounded-md duration-150" aria-haspopup="true" aria-expanded="false">
-          Business
-        </button>
-        <ul class="absolute left-0 mt-2 w-48 bg-white text-mckenzie-blue rounded shadow-lg desktop-dropdown-menu z-[100] text-center">
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Link 1</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Link 2</a></li>
-          <li><a href="#" class="block px-4 py-2 text-mckenzie-blue hover:underline font-semibold">Link 3</a></li>
-        </ul>
-      </li>
-      <!-- Contact Us -->
-      <li>
-        <a href="#" class="font-semibold">Contact Us</a>
-      </li>
-    </ul>
-    <!-- Desktop Icons/Social (hidden on mobile) -->
-    <div class="hidden lg:flex items-center space-x-6 ml-8">
-      <div class="flex space-x-6 border-r border-l border-gray-300 pr-6 pl-6">
-        <div class="flex flex-col items-center">
-          <img src="svgs/Home%20Icon%20-%20White.svg" alt="Home" class="h-6 w-6" />
-          <span class="text-xs mt-1">Home</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="svgs/Call%20Icon%20-%20White.svg" alt="Call" class="h-6 w-6" />
-          <span class="text-xs mt-1">Call</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="svgs/Pay%20Icon%20-%20White.svg" alt="Pay" class="h-6 w-6" />
-          <span class="text-xs mt-1">Pay</span>
-        </div>
-      </div>
-      <div class="flex space-x-4 ml-6">
-        <a href="#"><img src="svgs/Facebook%20-%20White.svg" alt="Facebook" class="h-5 w-5" /></a>
-        <a href="#"><img src="svgs/Instagram%20-%20White.svg" alt="Instagram" class="h-5 w-5" /></a>
-        <a href="#"><img src="svgs/Search%20-%20White.svg" alt="Search" class="h-5 w-5" /></a>
-      </div>
-    </div>
-    <!-- Mobile Nav (hidden on desktop, unchanged) -->
-    <div id="nav-menu-content" class="w-full flex-col items-center space-y-8 transition-all duration-300 ease-in-out opacity-0 max-h-0 pointer-events-none lg:hidden">
-      <div class="flex flex-col justify-center items-center min-h-[calc(100vh-4rem)]">
-        <div class="flex justify-center space-x-12 mb-8">
-          <div class="flex flex-col items-center">
-            <img src="svgs/Home%20Icon%20-%20White.svg" alt="Home" class="h-8 w-8" />
-            <span class="text-base mt-1">Home</span>
-          </div>
-          <div class="flex flex-col items-center">
-            <img src="svgs/Call%20Icon%20-%20White.svg" alt="Call" class="h-8 w-8" />
-            <span class="text-base mt-1">Call</span>
-          </div>
-          <div class="flex flex-col items-center">
-            <img src="svgs/Pay%20Icon%20-%20White.svg" alt="Pay" class="h-8 w-8" />
-            <span class="text-base mt-1">Pay</span>
-          </div>
-        </div>
-        <ul class="flex flex-col items-center space-y-6">
-          <li class="w-full min-w-48">
-            <button class="nav-section-toggle text-lg font-semibold text-white flex items-center justify-between w-full">
-              Government
-              <img src="svgs/Chevron%20Down%20-%20White.svg" alt="Expand" class="h-5 w-5 transform transition-transform duration-200" />
-            </button>
-            <ul class="nav-section-content hidden space-y-4 mt-4 pl-4">
-              <li><a href="#" class="text-base hover:underline text-white">City Council & Mayor</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">City Departments</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Municipal Code</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Boards & Commissions</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Meetings, Agendas & Minutes</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Transparency & Public Records</a></li>
-            </ul>
-          </li>
-          <li class="w-full">
-            <button class="nav-section-toggle text-lg font-semibold text-white flex items-center justify-between w-full">
-              Residents
-              <img src="svgs/Chevron%20Down%20-%20White.svg" alt="Expand" class="h-5 w-5 transform transition-transform duration-200" />
-            </button>
-            <ul class="nav-section-content hidden space-y-4 mt-4 pl-4">
-              <li><a href="#" class="text-base hover:underline text-white">Link 1</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Link 2</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Link 3</a></li>
-            </ul>
-          </li>
-          <li class="w-full">
-            <button class="nav-section-toggle text-lg font-semibold text-white flex items-center justify-between w-full">
-              Business
-              <img src="svgs/Chevron%20Down%20-%20White.svg" alt="Expand" class="h-5 w-5 transform transition-transform duration-200" />
-            </button>
-            <ul class="nav-section-content hidden space-y-4 mt-4 pl-4">
-              <li><a href="#" class="text-base hover:underline text-white">Link 1</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Link 2</a></li>
-              <li><a href="#" class="text-base hover:underline text-white">Link 3</a></li>
-            </ul>
-          </li>
-          <li class="w-full">
-            <a href="#" class="text-lg font-semibold text-white block">Contact Us</a>
-          </li>
-        </ul>
-        <div class="flex justify-center space-x-8 mt-10">
-          <a href="#"><img src="svgs/Facebook%20-%20White.svg" alt="Facebook" class="h-6 w-6" /></a>
-          <a href="#"><img src="svgs/Instagram%20-%20White.svg" alt="Instagram" class="h-6 w-6" /></a>
-          <a href="#"><img src="svgs/Search%20-%20White.svg" alt="Search" class="h-6 w-6" /></a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div hx-get="/components/nav.html" hx-trigger="load"></div>
 
   <!-- Hero section with background image and search -->
   <section class="relative w-full h-[350px] md:h-[500px] flex items-center justify-center z-0"
@@ -193,135 +31,48 @@
   <section class="bg-mckenzie-red py-10 lg:py-3 relative overflow-visible lg:-mt-30">
     <!-- Emblem (center, only on lg+) -->
     <div class="hidden lg:block absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-      <img src="svgs/McKenzie%20Emblem.svg" alt="McKenzie Emblem" class="h-44 w-44 mx-auto rounded-full border-8 border-white shadow-lg" />
+      <img src="svgs/McKenzie%20Emblem.svg" alt="McKenzie Emblem"
+        class="h-44 w-44 mx-auto rounded-full border-8 border-white shadow-lg" />
     </div>
     <div class="max-w-6xl mx-auto grid grid-cols-3 lg:grid-cols-7 gap-8 text-center items-center">
       <!-- Left 3 icons -->
       <a href="#" class="flex flex-col items-center group">
         <img src="svgs/Meetings%20&%20Events%20Icon.svg" alt="Meetings & Events"
-          class="h-12 w-12 mb-2 group-hover:scale-110 transition-transform duration-200" />
-        <span class="text-white font-semibold text-base leading-tight">Meetings<br />& Events</span>
+          class="h-12 w-12 mb-2 blue-filter-hover" />
+        <span class="text-white font-semibold text-base leading-tight group-hover:text-mckenzie-light-blue">Meetings<br />& Events</span>
       </a>
       <a href="#" class="flex flex-col items-center group">
         <img src="svgs/Agendas%20&%20Minutes%20Icon.svg" alt="Agendas & Minutes"
-          class="h-12 w-12 mb-2 group-hover:scale-110 transition-transform duration-200" />
-        <span class="text-white font-semibold text-base leading-tight">Agendas<br />& Minutes</span>
+          class="h-12 w-12 mb-2 blue-filter-hover" />
+        <span class="text-white font-semibold text-base leading-tight group-hover:text-mckenzie-light-blue">Agendas<br />& Minutes</span>
       </a>
       <a href="#" class="flex flex-col items-center group">
         <img src="svgs/Business%20Directory%20Icon.svg" alt="Business Directory"
-          class="h-12 w-12 mb-2 group-hover:scale-110 transition-transform duration-200" />
-        <span class="text-white font-semibold text-base leading-tight">Business<br />Directory</span>
+          class="h-12 w-12 mb-2 blue-filter-hover" />
+        <span class="text-white font-semibold text-base leading-tight group-hover:text-mckenzie-light-blue">Business<br />Directory</span>
       </a>
       <!-- Spacer for emblem column on lg+ -->
       <div class="hidden lg:block"></div>
       <!-- Right 3 icons -->
       <a href="#" class="flex flex-col items-center group">
         <img src="svgs/Utility%20Payments%20Icon.svg" alt="Utility Payments"
-          class="h-12 w-12 mb-2 group-hover:scale-110 transition-transform duration-200" />
-        <span class="text-white font-semibold text-base leading-tight">Utility<br />Payments</span>
+          class="h-12 w-12 mb-2 blue-filter-hover" />
+        <span class="text-white font-semibold text-base leading-tight group-hover:text-mckenzie-light-blue">Utility<br />Payments</span>
       </a>
       <a href="#" class="flex flex-col items-center group">
         <img src="svgs/Municipal%20Codes%20Icon.svg" alt="Municipal Codes"
-          class="h-12 w-12 mb-2 group-hover:scale-110 transition-transform duration-200" />
-        <span class="text-white font-semibold text-base leading-tight">Municipal<br />Codes</span>
+          class="h-12 w-12 mb-2 blue-filter-hover" />
+        <span class="text-white font-semibold text-base leading-tight group-hover:text-mckenzie-light-blue">Municipal<br />Codes</span>
       </a>
       <a href="#" class="flex flex-col items-center group">
         <img src="svgs/News%20&%20Notices%20Icon.svg" alt="News & Notices"
-          class="h-12 w-12 mb-2 group-hover:scale-110 transition-transform duration-200" />
-        <span class="text-white font-semibold text-base leading-tight">News &<br />Notices</span>
+          class="h-12 w-12 mb-2 blue-filter-hover" />
+        <span class="text-white font-semibold text-base leading-tight group-hover:text-mckenzie-light-blue">News &<br />Notices</span>
       </a>
     </div>
   </section>
 
-  <!-- Proud home of section -->
-  <section class="bg-gray-400 py-8">
-    <div class="max-w-sm md:max-w-3xl lg:max-w-4xl mx-auto grid grid-cols-1 gap-6 md:grid-cols-4 md:items-center">
-      <h2 class="text-white text-xl font-semibold text-center md:text-left md:col-span-1">Proud home of:</h2>
-      <div class="grid grid-cols-2 gap-4 md:col-span-3 md:grid-cols-3">
-        <div class="col-span-2 md:col-span-1 flex justify-center">
-          <img src="svgs/McKenzie%20Special%20School%20District%20Logo.svg" alt="McKenzie Special School District" class="h-12 w-auto" />
-        </div>
-        <div class="col-span-1 flex justify-center">
-          <img src="svgs/Bethel%20University%20Logo.svg" alt="Bethel University" class="h-12 w-auto" />
-        </div>
-        <div class="col-span-1 flex justify-center">
-          <img src="svgs/TCAT%20-%20McKenzie%20Logo.svg" alt="TCAT McKenzie" class="h-12 w-auto" />
-        </div>
-      </div>
-    </div>
-  </section>
+  <div hx-get="/components/proud-home.html" hx-trigger="load"></div>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuIcon = document.getElementById('menu-icon');
-    const navMenu = document.getElementById('main-nav');
-    const navMenuContent = document.getElementById('nav-menu-content');
-    let menuOpen = false;
-
-    // Mobile menu handling
-    function openMenu() {
-      navMenu.classList.add('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
-      navMenuContent.classList.remove('opacity-0', 'max-h-0', 'pointer-events-none');
-      navMenuContent.classList.add('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
-      menuIcon.src = 'svgs/x-icon.svg';
-      menuOpen = true;
-    }
-
-    function closeMenuFn() {
-      navMenu.classList.remove('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
-      navMenuContent.classList.remove('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
-      navMenuContent.classList.add('opacity-0', 'max-h-0', 'pointer-events-none');
-      menuIcon.src = 'svgs/Menu.svg';
-      menuOpen = false;
-      
-      // Reset all expanded sections when closing menu
-      document.querySelectorAll('.nav-section-content').forEach(content => {
-        content.classList.add('hidden');
-      });
-      document.querySelectorAll('.nav-section-toggle img').forEach(icon => {
-        icon.style.transform = 'rotate(0deg)';
-      });
-    }
-
-    menuToggle.addEventListener('click', () => {
-      if (menuOpen) {
-        closeMenuFn();
-      } else {
-        openMenu();
-      }
-    });
-
-    // Add event listeners for nav section toggles (mobile)
-    document.querySelectorAll('.nav-section-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const content = toggle.nextElementSibling;
-        const icon = toggle.querySelector('img');
-        
-        // Toggle the content
-        content.classList.toggle('hidden');
-        
-        // Rotate the icon
-        icon.style.transform = content.classList.contains('hidden') 
-          ? 'rotate(0deg)' 
-          : 'rotate(180deg)';
-      });
-    });
-  </script>
-
-  <!-- Footer section -->
-  <footer class="bg-mckenzie-blue py-8 text-white">
-    <div class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-4">
-      <img src="svgs/City%20of%20McKenzie%20Logo%20-%20DBG.svg" alt="City of McKenzie Logo" class="h-14 w-auto mb-2" />
-      <div class="text-base mt-2">2470 Cedar Street &bull; McKenzie, TN 328201</div>
-      <div class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 mt-2">
-        <a href="tel:7313522292" class="underline font-semibold hover:text-mckenzie-red">731.352.2292</a>
-        <span class="hidden md:inline">&bull;</span>
-        <a href="#" class="underline font-semibold hover:text-mckenzie-red">Careers</a>
-        <span class="hidden md:inline">&bull;</span>
-        <a href="#" class="underline font-semibold hover:text-mckenzie-red">Accessibility</a>
-      </div>
-    </div>
-  </footer>
-</body>
-
-</html>
+  <!-- Footer -->
+  <div hx-get="/components/footer.html" hx-trigger="load"></div>
