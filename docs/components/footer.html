@@ -7,68 +7,74 @@
 
     // Mobile menu handling
     function openMenu() {
-      navMenu.classList.add('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
-      navMenuContent.classList.remove('opacity-0', 'max-h-0', 'pointer-events-none');
-      navMenuContent.classList.add('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
-      menuIcon.src = 'svgs/x-icon.svg';
-      menuOpen = true;
+        navMenu.classList.add('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
+        navMenuContent.classList.remove('opacity-0', 'max-h-0', 'pointer-events-none');
+        navMenuContent.classList.add('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
+        menuIcon.src = 'svgs/x-icon.svg';
+        menuOpen = true;
     }
 
     function closeMenuFn() {
-      navMenu.classList.remove('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
-      navMenuContent.classList.remove('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
-      navMenuContent.classList.add('opacity-0', 'max-h-0', 'pointer-events-none');
-      menuIcon.src = 'svgs/Menu.svg';
-      menuOpen = false;
-      
-      // Reset all expanded sections when closing menu
-      document.querySelectorAll('.nav-section-content').forEach(content => {
-        content.classList.add('hidden');
-      });
-      document.querySelectorAll('.nav-section-toggle img').forEach(icon => {
-        icon.style.transform = 'rotate(0deg)';
-      });
+        navMenu.classList.remove('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
+        navMenuContent.classList.remove('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
+        navMenuContent.classList.add('opacity-0', 'max-h-0', 'pointer-events-none');
+        menuIcon.src = 'svgs/Menu.svg';
+        menuOpen = false;
+
+        // Reset all expanded sections when closing menu
+        document.querySelectorAll('.nav-section-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        document.querySelectorAll('.nav-section-toggle img').forEach(icon => {
+            icon.style.transform = 'rotate(0deg)';
+        });
     }
 
     menuToggle.addEventListener('click', () => {
-      if (menuOpen) {
-        closeMenuFn();
-      } else {
-        openMenu();
-      }
+        if (menuOpen) {
+            closeMenuFn();
+        } else {
+            openMenu();
+        }
     });
 
     // Add event listeners for nav section toggles (mobile)
     document.querySelectorAll('.nav-section-toggle').forEach(toggle => {
-      toggle.addEventListener('click', () => {
-        const content = toggle.nextElementSibling;
-        const icon = toggle.querySelector('img');
-        
-        // Toggle the content
-        content.classList.toggle('hidden');
-        
-        // Rotate the icon
-        icon.style.transform = content.classList.contains('hidden') 
-          ? 'rotate(0deg)' 
-          : 'rotate(180deg)';
-      });
-    });
-  </script>
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            const icon = toggle.querySelector('img');
 
-  <!-- Footer section -->
-  <footer class="bg-mckenzie-blue py-8 text-white">
-    <div class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-4">
-      <img src="svgs/City%20of%20McKenzie%20Logo%20-%20DBG.svg" alt="City of McKenzie Logo" class="h-14 w-auto mb-2" />
-      <div class="text-base mt-2">2470 Cedar Street &bull; McKenzie, TN 328201</div>
-      <div class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 mt-2">
-        <a href="tel:7313522292" class="underline font-semibold hover:text-mckenzie-light-blue">731.352.2292</a>
-        <span class="hidden md:inline">&bull;</span>
-        <a href="#" class="underline font-semibold hover:text-mckenzie-light-blue">Careers</a>
-        <span class="hidden md:inline">&bull;</span>
-        <a href="#" class="underline font-semibold hover:text-mckenzie-light-blue">Accessibility</a>
-      </div>
+            // Toggle the content
+            content.classList.toggle('hidden');
+
+            // Rotate the icon
+            icon.style.transform = content.classList.contains('hidden')
+                ? 'rotate(0deg)'
+                : 'rotate(180deg)';
+        });
+    });
+</script>
+
+<!-- Footer section -->
+<footer class="bg-mckenzie-blue py-8 text-white">
+    <div
+        class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-4 lg:space-y-0 lg:flex-row lg:justify-center lg:max-w-4xl">
+        <div class="lg:mx-4 lg:px-4 lg:relative lg:border-x lg:border-white lg:order-2 mb-2 lg:mb-0">
+            <a href="/" class="group">
+                <img src="svgs/mckenzie-logo-white.svg" alt="City of McKenzie Logo"
+                    class="h-14 w-auto blue-filter-hover" />
+            </a>
+        </div>
+        <div class="text-base mt-2 lg:mt-0 lg:order-1">2470 Cedar Street &bull; McKenzie, TN 328201</div>
+        <div class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 mt-2 lg:mt-0 lg:space-x-2 lg:order-3">
+            <a href="tel:7313522292" class="underline font-semibold hover:text-mckenzie-light-blue">731.352.2292</a>
+            <span class="hidden md:inline">&bull;</span>
+            <a href="#" class="underline font-semibold hover:text-mckenzie-light-blue">Careers</a>
+            <span class="hidden md:inline">&bull;</span>
+            <a href="#" class="underline font-semibold hover:text-mckenzie-light-blue">Accessibility</a>
+        </div>
     </div>
-  </footer>
+</footer>
 </body>
 
 </html>
