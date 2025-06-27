@@ -24,14 +24,10 @@
   <section id="interior-body" class="max-w-4xl mx-auto px-6 py-8 lg:py-12 xl:py-14 bg-white">
     <div>
       <h1 class="text-center">Welcome to the City of McKenzie Business Directory</h1>
-      <p>Instructions on use…Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-        anim id est laborum.</p>
+      <p>Instructions on use…Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <hr>
-    <form class="flex w-full">
+    <form class="flex flex-col sm:flex-row w-full">
       <div class="relative flex-grow">
         <input type="text" placeholder="Search"
           class="w-full rounded-full py-3 pl-6 pr-12 text-gray-700 bg-neutral-100 bg-opacity-90 shadow focus:outline-none focus:ring-1 focus:ring-mckenzie-blue text-lg placeholder-gray-400" />
@@ -39,12 +35,12 @@
           <img src="svgs/Search%20-%20Gray.svg" alt="Search" class="h-6 w-6" />
         </span>
       </div>
-      <button class="flex justify-center items-center ml-4 group">
-        <span class="">
+      <button class="flex justify-center items-center mt-4 sm:mt-0 sm:ml-4 group">
+        <div class="h-8 relative">
           <img src="svgs/filter-icon.svg" alt="Filter" class="h-8 w-8 group-hover:hidden" />
           <img src="svgs/filter-icon-hover.svg" alt="Filter Hover" class="h-8 w-8 hidden group-hover:block" />
-        </span>
-        <div class="text-mckenzie-blue ml-2 text-lg">Filter</div>
+        </div>
+        <div class="text-mckenzie-blue ml-2 text-lg font-medium">Filter</div>
       </button>
     </form>
     <div class="business-directory">
@@ -55,101 +51,8 @@
         <hr class="flex-grow border-t-1 border-mckenzie-blue !my-0" />
       </div>
       <div>
-
-        <!-- business directory card start -->
-        <div class="flex flex-col md:flex-row bg-neutral-100 rounded-lg p-4 my-4">
-          <div class="h-full mb-4 md:mb-0 md:mr-4 bg-white rounded-lg">
-            <img src="/images/YA-Logo-Full-Color.png" alt="Business Logo" class="rounded-full mx-auto my-auto" />
-          </div>
-          <div class="flex-grow flex flex-col justify-around">
-            <div class="flex justify-between items-center mb-2">
-              <div>
-                <div class="text-xl font-bold text-mckenzie-blue">Business Name</div>
-                <div class="text-md text-red-600">Business Category</div>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between">
-              <div class="mb-2 md:mb-0">
-                <div class="text-xs font-bold uppercase">Point Of Contact</div>
-                <div>Name</div>
-                <div><a href="#" class="!text-mckenzie-dark-blue">email@domain.com</a></div>
-                <button
-                  class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Email</button>
-              </div>
-              <div class="mb-2 md:mb-0">
-                <div class="text-xs font-bold uppercase">Contact Information</div>
-                <div><a href="#" class="!text-mckenzie-dark-blue">555-555-5555</a></div>
-                <div><a href="#" class="!text-mckenzie-dark-blue">domain.com</a></div>
-                <button
-                  class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Website</button>
-              </div>
-              <div>
-                <div class="text-xs font-bold uppercase">Address</div>
-                <div>123 Happy Street</div>
-                <div>McKenzie, TN 38201</div>
-                <button
-                  class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Directions</button>
-              </div>
-            </div>
-            <div class="flex mt-4 space-x-2 items-center">
-              <div class="uppercase text-mckenzie-dark-blue text-xs font-bold">Socials</div>
-              <a href="#" class="h-6 w-6 social-icon facebook-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon instagram-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon linkedin-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon youtube-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon x-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon tiktok-icon"></a>
-            </div>
-          </div>
-        </div>
-        <!-- business directory card end -->
-        <!-- business directory card start -->
-        <div class="flex flex-col md:flex-row bg-neutral-100 rounded-lg p-4 my-4">
-          <div class="h-full mb-4 md:mb-0 md:mr-4 bg-white rounded-lg">
-            <img src="/images/YA-Logo-Full-Color.png" alt="Business Logo" class="rounded-full mx-auto my-auto" />
-          </div>
-          <div class="flex-grow flex flex-col justify-around">
-            <div class="flex justify-between items-center mb-2">
-              <div>
-                <div class="text-xl font-bold text-mckenzie-blue">Business Name</div>
-                <div class="text-md text-red-600">Business Category</div>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between">
-              <div class="mb-2 md:mb-0">
-                <div class="text-xs font-bold uppercase">Point Of Contact</div>
-                <div>Name</div>
-                <div><a href="#" class="!text-mckenzie-dark-blue">email@domain.com</a></div>
-                <button
-                  class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Email</button>
-              </div>
-              <div class="mb-2 md:mb-0">
-                <div class="text-xs font-bold uppercase">Contact Information</div>
-                <div><a href="#" class="!text-mckenzie-dark-blue">555-555-5555</a></div>
-                <div><a href="#" class="!text-mckenzie-dark-blue">domain.com</a></div>
-                <button
-                  class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Website</button>
-              </div>
-              <div>
-                <div class="text-xs font-bold uppercase">Address</div>
-                <div>123 Happy Street</div>
-                <div>McKenzie, TN 38201</div>
-                <button
-                  class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Directions</button>
-              </div>
-            </div>
-            <div class="flex mt-4 space-x-2 items-center">
-              <div class="uppercase text-mckenzie-dark-blue text-xs font-bold">Socials</div>
-              <a href="#" class="h-6 w-6 social-icon facebook-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon instagram-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon linkedin-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon youtube-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon x-icon"></a>
-              <a href="#" class="h-6 w-6 social-icon tiktok-icon"></a>
-            </div>
-          </div>
-        </div>
-        <!-- business directory card end -->
+        <div hx-get="/components/business-card.html" hx-trigger="load"></div>
+        <div hx-get="/components/business-card.html" hx-trigger="load"></div>
 
       </div>
       <div id="B-businesses" class="flex flex-col w-full mt-6">
@@ -157,53 +60,8 @@
         <hr class="flex-grow border-t-1 border-mckenzie-blue !my-0" />
       </div>
 
-      <!-- business directory card start -->
-      <div class="flex flex-col md:flex-row bg-neutral-100 rounded-lg p-4 my-4">
-        <div class="h-full mb-4 md:mb-0 md:mr-4 bg-white rounded-lg">
-          <img src="/images/YA-Logo-Full-Color.png" alt="Business Logo" class="rounded-full mx-auto my-auto" />
-        </div>
-        <div class="flex-grow flex flex-col justify-around">
-          <div class="flex justify-between items-center mb-2">
-            <div>
-              <div class="text-xl font-bold text-mckenzie-blue">Business Name</div>
-              <div class="text-md text-red-600">Business Category</div>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row justify-between">
-            <div class="mb-2 md:mb-0">
-              <div class="text-xs font-bold uppercase">Point Of Contact</div>
-              <div>Name</div>
-              <div><a href="#" class="!text-mckenzie-dark-blue">email@domain.com</a></div>
-              <button
-                class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Email</button>
-            </div>
-            <div class="mb-2 md:mb-0">
-              <div class="text-xs font-bold uppercase">Contact Information</div>
-              <div><a href="#" class="!text-mckenzie-dark-blue">555-555-5555</a></div>
-              <div><a href="#" class="!text-mckenzie-dark-blue">domain.com</a></div>
-              <button
-                class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Website</button>
-            </div>
-            <div>
-              <div class="text-xs font-bold uppercase">Address</div>
-              <div>123 Happy Street</div>
-              <div>McKenzie, TN 38201</div>
-              <button
-                class="bg-mckenzie-blue text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-mckenzie-red">Directions</button>
-            </div>
-          </div>
-          <div class="flex mt-4 space-x-2 items-center">
-            <div class="uppercase text-mckenzie-dark-blue text-xs font-bold">Socials</div>
-            <a href="#" class="h-6 w-6 social-icon facebook-icon"></a>
-            <a href="#" class="h-6 w-6 social-icon instagram-icon"></a>
-            <a href="#" class="h-6 w-6 social-icon linkedin-icon"></a>
-            <a href="#" class="h-6 w-6 social-icon youtube-icon"></a>
-            <a href="#" class="h-6 w-6 social-icon x-icon"></a>
-            <a href="#" class="h-6 w-6 social-icon tiktok-icon"></a>
-          </div>
-        </div>
-      </div>
-      <!-- business directory card end -->
+      <div hx-get="/components/business-card.html" hx-trigger="load"></div>
+
     </div>
   </section>
 
