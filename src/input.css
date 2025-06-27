@@ -115,3 +115,50 @@
   }
 }
 
+.social-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.facebook-icon {
+  background-image: url('svgs/icons/facebook-blue.svg');
+}
+.facebook-icon:hover {
+  background-image: url('svgs/icons/facebook-red.svg');
+}
+.instagram-icon {
+  background-image: url('svgs/icons/instagram-blue.svg');
+}
+.instagram-icon:hover {
+  background-image: url('svgs/icons/instagram-red.svg');
+}
+.linkedin-icon {
+  background-image: url('svgs/icons/linkedin-blue.svg');
+}
+.linkedin-icon:hover {
+  background-image: url('svgs/icons/linkedin-red.svg');
+}
+.youtube-icon {
+  background-image: url('svgs/icons/youtube-blue.svg');
+}
+.youtube-icon:hover {
+  background-image: url('svgs/icons/youtube-red.svg');
+}
+.x-icon {
+  background-image: url('svgs/icons/x-blue.svg');
+}
+.x-icon:hover {
+  background-image: url('svgs/icons/x-red.svg');
+}
+.tiktok-icon {
+  background-image: url('svgs/icons/tiktok-blue.svg');
+}
+.tiktok-icon:hover {
+  background-image: url('svgs/icons/tiktok-red.svg');
+}
+.social-icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
