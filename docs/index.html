@@ -5,16 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City of McKenzie</title>
-  <link href="./output.css" rel="stylesheet" />
+  <link href="/output.css" rel="stylesheet" />
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/guf8qbf.css">
 
 </head>
 
-<body class="font-sans bg-mckenzie-blue">
+<body class="font-gotham bg-mckenzie-blue">
   <div hx-get="/components/nav.html" hx-trigger="load"></div>
 
   <!-- Hero section with background image and search -->
-  <section class="relative w-full min-h-[70vh] h-[350px] md:h-[500px] lg:h-[600px] flex items-center lg:items-start lg:pt-16 justify-center z-0"
+  <section class="relative w-full min-h-[70vh] lg:min-h-[75vh] h-[350px] md:h-[500px] lg:h-[600px] flex items-center lg:items-start lg:pt-16 justify-center z-0"
     style="background-image: url('images/McKenzie_Carroll_Hometown_Hangout.png'); background-size: cover; background-position: center;">
     <form class="w-11/12 max-w-xl mx-auto">
       <div class="relative">
@@ -39,17 +40,17 @@
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
         <img src="svgs/Meetings%20&%20Events%20Icon.svg" alt="Meetings & Events"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-semibold text-base leading-tight">Meetings<br />& Events</span>
+        <span class="text-white font-medium text-base leading-tight">Meetings<br />& Events</span>
       </a>
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
         <img src="svgs/Agendas%20&%20Minutes%20Icon.svg" alt="Agendas & Minutes"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-semibold text-base leading-tight">Agendas<br />& Minutes</span>
+        <span class="text-white font-medium text-base leading-tight">Agendas<br />& Minutes</span>
       </a>
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
         <img src="svgs/Business%20Directory%20Icon.svg" alt="Business Directory"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-semibold text-base leading-tight">Business<br />Directory</span>
+        <span class="text-white font-medium text-base leading-tight">Business<br />Directory</span>
       </a>
       <!-- Spacer for emblem column on lg+ -->
       <div class="hidden lg:block"></div>
@@ -57,17 +58,17 @@
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
         <img src="svgs/Utility%20Payments%20Icon.svg" alt="Utility Payments"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-semibold text-base leading-tight">Utility<br />Payments</span>
+        <span class="text-white font-medium text-base leading-tight">Utility<br />Payments</span>
       </a>
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
         <img src="svgs/Municipal%20Codes%20Icon.svg" alt="Municipal Codes"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-semibold text-base leading-tight">Municipal<br />Codes</span>
+        <span class="text-white font-medium text-base leading-tight">Municipal<br />Codes</span>
       </a>
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
         <img src="svgs/News%20&%20Notices%20Icon.svg" alt="News & Notices"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-semibold text-base leading-tight">News &<br />Notices</span>
+        <span class="text-white font-medium text-base leading-tight">News &<br />Notices</span>
       </a>
     </div>
   </section>

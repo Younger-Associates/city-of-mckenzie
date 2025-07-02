@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* Styles moved from index.html */
+.font-gotham {
+  font-family: "gotham", sans-serif;
+}
 .desktop-dropdown-parent {
   position: relative;
 }
