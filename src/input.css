@@ -82,8 +82,11 @@
 }
 
 #interior-body ul li::marker {
+  content: "» ";
   color: theme('colors.mckenzie.red');
+  font-weight: 500;
 }
+
 
 #interior-body hr {
   margin: 15px 0;
