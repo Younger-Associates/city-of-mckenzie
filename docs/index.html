@@ -5,24 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City of McKenzie</title>
-  <link href="/output.css" rel="stylesheet" />
+  <link href="/assets/css/output.css" rel="stylesheet" />
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
   <link rel="stylesheet" href="https://use.typekit.net/guf8qbf.css">
 
 </head>
 
 <body class="font-gotham bg-mckenzie-blue">
-  <div hx-get="/components/nav.html" hx-trigger="load"></div>
+  {nav}
 
   <!-- Hero section with background image and search -->
-  <section class="relative w-full min-h-[70vh] lg:min-h-[75vh] h-[350px] md:h-[500px] lg:h-[600px] flex items-center lg:items-start lg:pt-16 justify-center z-0"
-    style="background-image: url('images/McKenzie_Carroll_Hometown_Hangout.png'); background-size: cover; background-position: center;">
+  <section id="hero-section" class="relative w-full min-h-[70vh] lg:min-h-[75vh] h-[350px] md:h-[500px] lg:h-[600px] flex items-center lg:items-start lg:pt-16 justify-center z-0"
+    style="background-size: cover; background-position: center;">
     <form class="w-11/12 max-w-xl mx-auto">
       <div class="relative">
         <input type="text" placeholder="Search"
           class="w-full rounded-full py-3 pl-6 pr-12 text-gray-700 bg-white bg-opacity-90 shadow focus:outline-none focus:ring-2 focus:ring-mckenzie-blue text-lg placeholder-gray-400" />
         <span class="absolute inset-y-0 right-4 flex items-center">
-          <img src="svgs/Search%20-%20Gray.svg" alt="Search" class="h-6 w-6" />
+          <img src="/assets/svgs/Search%20-%20Gray.svg" alt="Search" class="h-6 w-6" />
         </span>
       </div>
     </form>
@@ -32,48 +32,56 @@
   <section class="bg-mckenzie-red py-10 lg:py-1 relative overflow-visible lg:-mt-[210px] lg:mb-[98px]">
     <!-- Emblem (center, only on lg+) -->
     <div class="hidden lg:block absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-      <img src="svgs/McKenzie%20Emblem.svg" alt="McKenzie Emblem"
+      <img src="/assets/svgs/McKenzie%20Emblem.svg" alt="McKenzie Emblem"
         class="h-44 w-44 mx-auto rounded-full border-8 border-white shadow-lg" />
     </div>
     <div class="max-w-6xl mx-auto grid grid-cols-3 lg:grid-cols-7 gap-8 text-center items-center">
       <!-- Left 3 icons -->
       <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Meetings%20&%20Events%20Icon.svg" alt="Meetings & Events"
+        <img src="/assets/svgs/Meetings%20&%20Events%20Icon.svg" alt="Meetings & Events"
           class="h-10 w-10 mb-2" />
         <span class="text-white font-medium text-base leading-tight">Meetings<br />& Events</span>
       </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Agendas%20&%20Minutes%20Icon.svg" alt="Agendas & Minutes"
+      <a href="/government/meetings-agendas-and-minutes/" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
+        <img src="/assets/svgs/Agendas%20&%20Minutes%20Icon.svg" alt="Agendas & Minutes"
           class="h-10 w-10 mb-2" />
         <span class="text-white font-medium text-base leading-tight">Agendas<br />& Minutes</span>
       </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Business%20Directory%20Icon.svg" alt="Business Directory"
+      <a href="/business/business-directory/" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
+        <img src="/assets/svgs/Business%20Directory%20Icon.svg" alt="Business Directory"
           class="h-10 w-10 mb-2" />
         <span class="text-white font-medium text-base leading-tight">Business<br />Directory</span>
       </a>
       <!-- Spacer for emblem column on lg+ -->
       <div class="hidden lg:block"></div>
       <!-- Right 3 icons -->
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Utility%20Payments%20Icon.svg" alt="Utility Payments"
+      <a href="https://citisenportal.com/Account/Login" target="_blank" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
+        <img src="/assets/svgs/Utility%20Payments%20Icon.svg" alt="Utility Payments"
           class="h-10 w-10 mb-2" />
         <span class="text-white font-medium text-base leading-tight">Utility<br />Payments</span>
       </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Municipal%20Codes%20Icon.svg" alt="Municipal Codes"
+      <a href="/government/municipal-code/" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
+        <img src="/assets/svgs/Municipal%20Codes%20Icon.svg" alt="Municipal Code"
           class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">Municipal<br />Codes</span>
+        <span class="text-white font-medium text-base leading-tight">Municipal<br />Code</span>
       </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/News%20&%20Notices%20Icon.svg" alt="News & Notices"
+      <a href="/residents/city-notifications/" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
+        <img src="/assets/svgs/News%20&%20Notices%20Icon.svg" alt="News & Notices"
           class="h-10 w-10 mb-2" />
         <span class="text-white font-medium text-base leading-tight">News &<br />Notices</span>
       </a>
     </div>
   </section>
 
-  <div hx-get="/components/proud-home.html" hx-trigger="load"></div>
+  {proud_home}
+  
+  <script>
+    const hero_section = document.getElementById("hero-section");
+    const image_urls = ["/assets/images/McKenzie_Carroll_Hometown_Hangout.png", "/images/uploads/header_images/bethel_university_hero.webp"]
+    const random_number = Math.floor(Math.random() * image_urls.length);
+    const image_url = image_urls[random_number];
+    hero_section.style.backgroundImage = `url("${image_url}")`;
+  </script>
 
   <!-- Footer -->
-  <div hx-get="/components/footer.html" hx-trigger="load"></div>
+  {footer}
